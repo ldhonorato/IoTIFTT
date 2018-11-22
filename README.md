@@ -9,6 +9,8 @@ O minicurso será ofertado e organizado por [Leandro Honorato](https://github.co
 ## URL NodeMCU Devkit na IDE Arduino
 http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
+## URL Adafruit
+https://io.adafruit.com/
 
 ## Atividade 1
 
