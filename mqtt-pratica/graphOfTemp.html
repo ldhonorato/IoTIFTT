@@ -1,11 +1,12 @@
 <html>
   <head>
   <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-  <link type="text/css" rel="stylesheet" href="http://code.shutterstock.com/rickshaw/src/css/graph.css">
-  <link type="text/css" rel="stylesheet" href="http://code.shutterstock.com/rickshaw/src/css/detail.css">
-  <link type="text/css" rel="stylesheet" href="http://code.shutterstock.com/rickshaw/src/css/legend.css">
-  <link type="text/css" rel="stylesheet" href="http://code.shutterstock.com/rickshaw/examples/css/extensions.css?v=2">
+  <link type="text/css" rel="stylesheet" href="http://shutterstock.github.io/rickshaw/src/css/graph.css">
+  <link type="text/css" rel="stylesheet" href="http://shutterstock.github.io/rickshaw/src/css/detail.css">
+  <link type="text/css" rel="stylesheet" href="http://shutterstock.github.io/rickshaw/src/css/legend.css">
+  <link type="text/css" rel="stylesheet" href="http://shutterstock.github.io/rickshaw/examples/css/extensions.css?v=2">
 
+  
   </head>
   <body onload="init();">
     <div id="content">
@@ -17,16 +18,19 @@
 
     </div>
 
-  <script src="http://code.shutterstock.com/rickshaw/vendor/d3.v2.js" type="text/javascript"></script>
-  <script src="http://code.shutterstock.com/rickshaw/rickshaw.min.js" type="text/javascript"></script>
+  <script src="http://shutterstock.github.io/rickshaw/vendor/d3.v2.js" type="text/javascript"></script>
+  <script src="http://shutterstock.github.io/rickshaw/rickshaw.min.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js" type="text/javascript"></script>
+
   <script type="text/javascript">
-      var wsbroker = "localhost";
-      // var wsbroker = "iot.eclipse.org"; 
-      var wsport = 9001 
-      // var wsport = 80 
+      // var wsbroker = "localhost";
+      // var wsport = 9001 
+      // var client = new Paho.MQTT.Client(wsbroker, wsport, '', "myclientid_" + parseInt(Math.random() * 100, 10));
+
+      var wsbroker = "iot.eclipse.org"; 
+      var wsport = 80 
       var client = new Paho.MQTT.Client(wsbroker, wsport, '/ws', "myclientid_" + parseInt(Math.random() * 100, 10));
-      //var client = new Paho.MQTT.Client(wsbroker, wsport, '', "myclientid_" + parseInt(Math.random() * 100, 10));
+      
 
           var tv = 500;
 
@@ -72,11 +76,13 @@
     function init() {
         client.connect(options);
     }
+    // Desligar
     function off(){
           message = new Paho.MQTT.Message("1");
           message.destinationName = "atuador/temperatura";
           client.send(message);
     }
+    // Ligar
     function on(){
           message = new Paho.MQTT.Message("0");
           message.destinationName = "atuador/temperatura";
