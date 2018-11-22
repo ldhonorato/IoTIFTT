@@ -1,5 +1,8 @@
 ![](logo.png)
 
+# URL NodeMCU Devkit na IDE Arduino
+http://arduino.esp8266.com/stable/package_esp8266com_index.json
+
 # Docker: ambientes distribuídos podem ser legais
 
 
