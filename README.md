@@ -3,7 +3,7 @@
 # URL NodeMCU Devkit na IDE Arduino
 http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
-# Docker: ambientes distribuídos podem ser legais
+# IoT com IFTTT
 
 
 Este material contem o roteiro das atidades e comandos a serem utilizados no minicurso _IoT com IFTTT_. 
